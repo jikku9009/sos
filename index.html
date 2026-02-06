@@ -1,33 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SOS Online – 2 Player Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>For Megha 🌹</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* Card */
+    .card {
+        width: 260px;
+        height: 180px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.8s;
+        position: absolute;
+    }
+
+    .card.open {
+        transform: scale(0);
+    }
+
+    .card h2 {
+        color: #e6005c;
+    }
+
+    /* Rose section */
+    .rose-section {
+        display: none;
+        text-align: center;
+        animation: fadeIn 2s;
+    }
+
+    .rose {
+        font-size: 120px;
+        animation: float 3s infinite ease-in-out;
+    }
+
+    .rose-text {
+        font-size: 26px;
+        color: #fff;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    /* Letter */
+    .letter {
+        display: none;
+        background: rgba(255,255,255,0.95);
+        padding: 30px;
+        border-radius: 20px;
+        width: 80%;
+        max-width: 500px;
+        animation: fadeIn 2s;
+        color: #444;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .letter h1 {
+        color: #e6005c;
+        text-align: center;
+    }
+
+    .letter p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>SOS Online</h1>
-        <p class="subtitle">Just You & Your Favorite Person!</p>
-        <div id="game-info">
-            <span id="turn-indicator"></span>
-            <span id="score"></span>
-        </div>
-        <div id="board"></div>
-        <div id="controls">
-            <button id="resetBtn">🔄 New Game</button>
-        </div>
-        <div class="instructions">
-            <h2>How to Play</h2>
-            <p>Take turns placing <b>S</b> or <b>O</b> in any empty cell.<br>
-            Form "SOS" in any row, column, or diagonal to score a point.<br>
-            The person with the most points at the end wins!</p>
-        </div>
-        <footer>
-            <p>&copy; 2025 - SOS Online Game. Enjoy with friends!</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+
+<!-- Card -->
+<div class="card" id="card">
+    <h2>Open Me ❤️</h2>
+</div>
+
+<!-- Rose -->
+<div class="rose-section" id="roseSection">
+    <div class="rose">🌹</div>
+    <div class="rose-text">This is for you</div>
+</div>
+
+<!-- Letter -->
+<div class="letter" id="letter">
+    <h1>Dear Megha ❤️</h1>
+    <p>
+        Thank you for coming into my life.  
+        You have brought happiness, peace, and so much meaning to my world.
+    </p>
+    <p>
+        You are the **best person** I have, and I’m truly grateful for you.
+        Your presence makes my days brighter and my heart lighter.
+    </p>
+    <p>
+        You are **very gorgeous, beautiful, and pretty**, inside and out.
+        I feel lucky every single day to have you.
+    </p>
+    <p style="text-align:center; font-weight:bold;">
+        Happy Rose Day 🌹  
+    </p>
+</div>
+
+<script>
+    const card = document.getElementById("card");
+    const roseSection = document.getElementById("roseSection");
+    const letter = document.getElementById("letter");
+
+    card.addEventListener("click", () => {
+        card.classList.add("open");
+
+        setTimeout(() => {
+            roseSection.style.display = "block";
+        }, 800);
+
+        setTimeout(() => {
+            roseSection.style.display = "none";
+            letter.style.display = "block";
+        }, 3500);
+    });
+</script>
+
 </body>
-</html>
+    </html>
