@@ -2,146 +2,230 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Megha 🌹</title>
+<title>For Megha ❤️</title>
+
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to top right, #ff9a9e, #fad0c4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    /* Card */
-    .card {
-        width: 260px;
-        height: 180px;
-        background: #fff;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: transform 0.8s;
-        position: absolute;
-    }
+body{
+    height:100vh;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
 
-    .card.open {
-        transform: scale(0);
-    }
+/* Floating hearts */
+.heart{
+    position:absolute;
+    bottom:-20px;
+    font-size:22px;
+    animation:float 8s linear infinite;
+    opacity:0.7;
+}
 
-    .card h2 {
-        color: #e6005c;
-    }
+@keyframes float{
+    from{transform:translateY(0) scale(1)}
+    to{transform:translateY(-120vh) scale(1.6);opacity:0}
+}
 
-    /* Rose section */
-    .rose-section {
-        display: none;
-        text-align: center;
-        animation: fadeIn 2s;
-    }
+/* Envelope Card */
+.card{
+    width:280px;
+    height:190px;
+    background:white;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+    animation:pulse 1.8s infinite;
+    position:absolute;
+    text-align:center;
+}
 
-    .rose {
-        font-size: 120px;
-        animation: float 3s infinite ease-in-out;
-    }
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.06)}
+}
 
-    .rose-text {
-        font-size: 26px;
-        color: #fff;
-        margin-top: 10px;
-        font-weight: bold;
-    }
+.card h2{
+    color:#e60073;
+    font-size:26px;
+}
 
-    /* Letter */
-    .letter {
-        display: none;
-        background: rgba(255,255,255,0.95);
-        padding: 30px;
-        border-radius: 20px;
-        width: 80%;
-        max-width: 500px;
-        animation: fadeIn 2s;
-        color: #444;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
+/* Rose Section */
+.rose-section{
+    display:none;
+    text-align:center;
+    animation:fadeIn 2s forwards;
+}
 
-    .letter h1 {
-        color: #e6005c;
-        text-align: center;
-    }
+.rose{
+    font-size:160px;
+    animation:grow 2s forwards, glow 2s infinite;
+}
 
-    .letter p {
-        font-size: 18px;
-        line-height: 1.6;
-    }
+@keyframes grow{
+    from{transform:scale(0)}
+    to{transform:scale(1)}
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+@keyframes glow{
+    0%,100%{filter:drop-shadow(0 0 15px #ff0066)}
+    50%{filter:drop-shadow(0 0 40px #ff0066)}
+}
 
-    @keyframes float {
-        0%,100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-    }
+.rose-text{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    margin-top:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:type 3s steps(30) forwards;
+}
+
+@keyframes type{
+    to{width:100%}
+}
+
+/* Letter */
+.letter{
+    display:none;
+    background:rgba(255,255,255,0.97);
+    padding:40px;
+    border-radius:25px;
+    width:90%;
+    max-width:600px;
+    animation:slideUp 2s ease;
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+
+@keyframes slideUp{
+    from{transform:translateY(120px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+
+.letter h1{
+    text-align:center;
+    color:#e60073;
+    margin-bottom:20px;
+}
+
+.letter p{
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:14px;
+}
+
+.signature{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:#e60073;
+    margin-top:20px;
+}
+
+/* Fade */
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
 </style>
 </head>
+
 <body>
 
 <!-- Card -->
 <div class="card" id="card">
-    <h2>Open Me ❤️</h2>
+    <h2>Open This 💖<br>For You 😘</h2>
 </div>
 
 <!-- Rose -->
 <div class="rose-section" id="roseSection">
     <div class="rose">🌹</div>
-    <div class="rose-text">This is for you</div>
+    <div class="rose-text">This rose is only for you, Megha 💕</div>
 </div>
 
 <!-- Letter -->
 <div class="letter" id="letter">
-    <h1>Dear Megha ❤️</h1>
+    <h1>My Dearest Megha 💌</h1>
+
     <p>
-        Thank you for coming into my life.  
-        You have brought happiness, peace, and so much meaning to my world.
+        From the moment you came into my life, everything changed 💖  
+        You brought smiles 😊, happiness ✨, and a warmth I never knew I needed 🥹
     </p>
+
     <p>
-        You are the **best person** I have, and I’m truly grateful for you.
-        Your presence makes my days brighter and my heart lighter.
+        Thank you for being part of my life 🌸  
+        Thank you for being **you** ❤️  
+        Your presence itself makes my world brighter 🌈
     </p>
+
     <p>
-        You are **very gorgeous, beautiful, and pretty**, inside and out.
-        I feel lucky every single day to have you.
+        You are the **best person** I have 🫶  
+        My comfort 🤍, my peace 🕊️, my favorite thought every day 💭💞
     </p>
-    <p style="text-align:center; font-weight:bold;">
-        Happy Rose Day 🌹  
+
+    <p>
+        And honestly Megha 😍  
+        You are **very gorgeous**, **pretty**, and **beautiful** 🌹✨  
+        Not just on the outside, but deeply from your heart 💖
     </p>
+
+    <p>
+        I feel lucky 🍀, grateful 🙏, and happy 🥰 to have you in my life  
+        You truly mean a lot to me 💘
+    </p>
+
+    <p style="text-align:center;font-weight:bold">
+        Happy Rose Day My Special One 🌹❤️
+    </p>
+
+    <div class="signature">
+        Forever Yours 💕<br>
+        😊🌸✨
+    </div>
 </div>
 
 <script>
-    const card = document.getElementById("card");
-    const roseSection = document.getElementById("roseSection");
-    const letter = document.getElementById("letter");
+/* Floating hearts */
+setInterval(()=>{
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerText="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=5+Math.random()*5+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),10000);
+},400);
 
-    card.addEventListener("click", () => {
-        card.classList.add("open");
+/* Flow control */
+const card=document.getElementById("card");
+const roseSection=document.getElementById("roseSection");
+const letter=document.getElementById("letter");
 
-        setTimeout(() => {
-            roseSection.style.display = "block";
-        }, 800);
+card.onclick=()=>{
+    card.style.display="none";
 
-        setTimeout(() => {
-            roseSection.style.display = "none";
-            letter.style.display = "block";
-        }, 3500);
-    });
+    roseSection.style.display="block";
+
+    setTimeout(()=>{
+        roseSection.style.display="none";
+        letter.style.display="block";
+    },4200);
+};
 </script>
 
 </body>
-    </html>
+        </html>
